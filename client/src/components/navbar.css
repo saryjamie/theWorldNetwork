@@ -1,0 +1,17 @@
+.namecss {
+  color: orange;
+  float: left;
+}
+
+a {
+  color: orange;
+}
+
+.signBtn {
+  position: absolute !important;
+  right: 3%;
+}
+
+.page-top {
+  margin-bottom: 0;
+}
