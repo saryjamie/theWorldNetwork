@@ -26,3 +26,8 @@ body {
 .container-fluid {
   padding-top: 6rem;
 }
+
+.card-container {
+  float: inherit;
+  justify-content: center;
+}

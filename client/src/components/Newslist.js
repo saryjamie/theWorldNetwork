@@ -9,18 +9,22 @@ const Newslistitem = ({ news }) => {
   const [profileState, setProfileState] = useState(news);
 
   return (
-    <div className="news" className="container-fluid">
-      <div className="card ">
+    <div className="news" className="container-fluid justify-content-md-center">
+      <div className="card text-center" style={{ width: "200", height: "400" }}>
         <img
           src={news.urlToImage}
           className="card-img-top"
           alt="image"
-          size=""
+          size="200x200"
         ></img>
         <div className="card-body">
           <h6 className="card-text">{news.title}</h6>
-          <p className="card-text">{news.content}</p>
-          <a className="card-text" href={news.url} target="_blank">
+          {/* <p className="card-text">{news.content}</p> */}
+          <a
+            className="card-text btn btn-outline-danger"
+            href={news.url}
+            target="_blank"
+          >
             Read More
           </a>
         </div>
@@ -37,9 +41,19 @@ const NewsList = props => {
   const [profileState, setProfileState] = useState(props);
 
   return (
-    <div>
-      <div className="container">
-        <div className="card-columns">
+    <div className="card-container">
+      <div className="row">
+        <div className="col-md-4">
+          {profileState.list.news.map(function(name, index) {
+            return <Newslistitem news={name} />;
+          })}
+        </div>
+        <div className="col-md-4">
+          {profileState.list.news.map(function(name, index) {
+            return <Newslistitem news={name} />;
+          })}
+        </div>
+        <div className="col-md-4">
           {profileState.list.news.map(function(name, index) {
             return <Newslistitem news={name} />;
           })}

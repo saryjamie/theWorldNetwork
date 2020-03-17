@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import img1 from "../assets/images/linkedin.jpeg";
 import img2 from "../assets/images/health.jpg";
-import img3 from "../assets/images/coronav.jpg";
+import img3 from "../assets/images/science.jpg";
 import img4 from "../assets/images/sports.jpg";
 import img5 from "../assets/images/entertainment.jpg";
 import img6 from "../assets/images/business.jpg";
@@ -19,6 +19,9 @@ function Cards(props) {
             imgsrc={img1}
             title="Technology"
             mycards={props.list.categories.technology}
+            onClick={props.handleClick}
+            id="technology"
+            // href="#"
           />
         </div>
         <div className="col-md-4">

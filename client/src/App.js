@@ -94,7 +94,10 @@ const App = function() {
   };
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      // style={{ backgroundImage: "url('./assets/images/banner.jpg')" }}
+    >
       <div
         className="text-center"
         style={{

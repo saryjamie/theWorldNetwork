@@ -33,12 +33,12 @@ function Card(props) {
         <img src={props.imgsrc} alt="image 1" className="card-img-top" />
       </div>
       <div className="card-body text-dark">
-        <h4
+        <h3
           className="card-title"
           style={{ fontFamily: "'Playfair Display', serif", colort: "grey" }}
         >
           {props.title}
-        </h4>
+        </h3>
         {/* <p className="card-text text-secondary"> {desc}  </p> */}
         {/* <button type="button" className="btn btn-link">Read More</button> */}
         {/* <ul>{items}</ul> */}

@@ -115,7 +115,7 @@ function form(props) {
           <div className="form-group form-check d-flex">
             <button
               type="submit"
-              className="btn btn-primary mr-auto"
+              className="btn btn-warning mr-auto"
               onClick={signIn}
             >
               Login
