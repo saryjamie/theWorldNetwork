@@ -14,6 +14,11 @@ import Footer from "./components/Footer";
 const App = function() {
   const [currentUser, setCurrentUser] = useState({ username: null, id: null });
   const [categorypolls, setCategorypolls] = useState("politics");
+
+  //added to check if newsList disappears
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+
   const [catPoll, setCatPoll] = useState({ catPoll: [] });
   const [newsList, setNewsList] = useState({ newsList: [] });
   const [news, setNews] = useState({ news: [] });
@@ -140,10 +145,10 @@ const App = function() {
       ))} */}
 
       <Cards list={categories} />
-
+      <Footer />
       <NewsList list={news} />
 
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };

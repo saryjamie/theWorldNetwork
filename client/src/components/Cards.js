@@ -19,7 +19,7 @@ function Cards(props) {
             imgsrc={img1}
             title="Technology"
             mycards={props.list.categories.technology}
-            onClick={props.handleClick}
+            // onClick={props.handleClick}
             id="technology"
             // href="#"
           />

@@ -6,7 +6,7 @@ import FormP from "./FormP";
 function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark nvbr">
         <button
           className="navbar-toggler"
           type="button"
