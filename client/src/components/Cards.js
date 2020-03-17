@@ -19,7 +19,7 @@ function Cards(props) {
             imgsrc={img1}
             title="Technology"
             mycards={props.list.categories.technology}
-            // onClick={props.handleClick}
+            handleClick={props.handleClick}
             id="technology"
             // href="#"
           />
@@ -29,6 +29,8 @@ function Cards(props) {
             imgsrc={img4}
             title="Sports"
             mycards={props.list.categories.sports}
+            handleClick={props.handleClick}
+            id="sports"
           />
         </div>
         <div className="col-md-4">
@@ -36,6 +38,8 @@ function Cards(props) {
             imgsrc={img3}
             title="Science"
             mycards={props.list.categories.science}
+            handleClick={props.handleClick}
+            id="science"
           />
         </div>
         {/* <div className="col-md-4">
@@ -50,6 +54,8 @@ function Cards(props) {
             imgsrc={img2}
             title="Health"
             mycards={props.list.categories.health}
+            handleClick={props.handleClick}
+            id="health"
           />
         </div>
         <div className="col-md-4">
@@ -57,6 +63,8 @@ function Cards(props) {
             imgsrc={img6}
             title="Business"
             mycards={props.list.categories.business}
+            handleClick={props.handleClick}
+            id="business"
           />
         </div>
         <div className="col-md-4">
@@ -64,6 +72,8 @@ function Cards(props) {
             imgsrc={img5}
             title="Entertainment"
             mycards={props.list.categories.entertainment}
+            handleClick={props.handleClick}
+            id="entertainment"
           />
         </div>
       </div>

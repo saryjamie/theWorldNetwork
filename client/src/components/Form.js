@@ -11,6 +11,7 @@ function form(props) {
   const [logged, setLogged] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [signingUp, setSigningUp] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -38,6 +39,15 @@ function form(props) {
 
   const cancel = () => {
     setShow(false);
+  };
+
+  const handleSignIn = () => {
+    handleShow();
+    setSigningUp(false);
+  };
+  const handleSignUp = () => {
+    handleShow();
+    setSigningUp(true);
   };
 
   const signUp = () => {
@@ -72,17 +82,29 @@ function form(props) {
           Sign Out
         </button>
       ) : (
-        <button type="button" class="btn btn-secondary" onClick={handleShow}>
-          Sign in
-        </button>
+        <>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            onClick={handleSignIn}
+          >
+            Sign in
+          </button>
+          <button
+            button
+            type="button"
+            class="btn btn-link"
+            id="signup"
+            onClick={handleSignUp}
+          >
+            Sign up
+          </button>
+        </>
       )}
-      {/* <button button type="button" class="btn btn-link" onClick={signUp}>
-        Signup
-      </button> */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Sign in</Modal.Title>
+          <Modal.Title>{signingUp ? "Sign Up" : "Sign In"}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -113,20 +135,24 @@ function form(props) {
 
         <Modal.Footer>
           <div className="form-group form-check d-flex">
-            <button
-              type="submit"
-              className="btn btn-warning mr-auto"
-              onClick={signIn}
-            >
-              Login
-            </button>
-            <button
-              type="submit"
-              className="btn btn-link ml-auto"
-              onClick={signUp}
-            >
-              Signup
-            </button>
+            {signingUp ? (
+              <button
+                type="submit"
+                className="btn btn-warning ml-auto"
+                onClick={signUp}
+              >
+                Signup
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="btn btn-warning mr-auto"
+                onClick={signIn}
+              >
+                Login
+              </button>
+            )}
+
             <button
               type="submit"
               className="btn btn-secondary ml-auto"

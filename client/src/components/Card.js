@@ -27,13 +27,26 @@ function Card(props) {
         }) 
      } */
 
+  function handleClick(e) {
+    console.log(e.target.id);
+    console.log("card clicked!");
+    props.handleClick(null, e.target.id);
+  }
+
   return (
-    <div className="card text-center">
+    <div className="card text-center" onClick={handleClick} id={props.id}>
+      {" "}
       <div className="overflow">
-        <img src={props.imgsrc} alt="image 1" className="card-img-top" />
+        <img
+          src={props.imgsrc}
+          alt="image 1"
+          className="card-img-top"
+          id={props.id}
+        />
       </div>
-      <div className="card-body text-dark">
+      <div className="card-body text-dark" id={props.id}>
         <h3
+          id={props.id}
           className="card-title"
           style={{ fontFamily: "'Playfair Display', serif", colort: "grey" }}
         >

@@ -43,7 +43,14 @@ const NewsList = props => {
   return (
     <div className="card-container">
       <div className="row">
-        <div className="col-md-4">
+        {profileState.list.news.map(function(name) {
+          return (
+            <div className="col-md-4">
+              <Newslistitem news={name} />
+            </div>
+          );
+        })}
+        {/* <div className="col-md-4">
           {profileState.list.news.map(function(name, index) {
             return <Newslistitem news={name} />;
           })}
@@ -52,12 +59,7 @@ const NewsList = props => {
           {profileState.list.news.map(function(name, index) {
             return <Newslistitem news={name} />;
           })}
-        </div>
-        <div className="col-md-4">
-          {profileState.list.news.map(function(name, index) {
-            return <Newslistitem news={name} />;
-          })}
-        </div>
+        </div> */}
       </div>
     </div>
   );

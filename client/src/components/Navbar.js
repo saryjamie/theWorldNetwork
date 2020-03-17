@@ -22,13 +22,18 @@ function Navbar(props) {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto" id="navigationItems">
             <li className="nav-item">
+              <a className="nav-link" onClick={props.handleClick} href="#">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
               <a
                 className="nav-link"
                 onClick={props.handleClick}
-                id=""
+                id="general"
                 href="#"
               >
-                Home
+                General
               </a>
             </li>
             <li className="nav-item">
@@ -94,9 +99,9 @@ function Navbar(props) {
             <li className="nav-item signBtn">
               <Form changeCurrentUser={props.changeCurrentUser} />
             </li>
-            <li className="nav-item signupBtn">
+            {/* <li className="nav-item signupBtn">
               <FormP changeCurrentUser={props.changeCurrentUser} />
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

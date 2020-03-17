@@ -18,7 +18,7 @@ const App = function() {
   //added to check if newsList disappears
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
-
+  const [cat, setCat] = useState(false);
   const [catPoll, setCatPoll] = useState({ catPoll: [] });
   const [newsList, setNewsList] = useState({ newsList: [] });
   const [news, setNews] = useState({ news: [] });
@@ -34,15 +34,15 @@ const App = function() {
     }
   });
 
-  useEffect(() => {
-    getPolls(categorypolls);
-    getNews_();
-  }, [categorypolls]);
+  // useEffect(() => {
+  //   getPolls(categorypolls);
+  //   getNews_();
+  // }, [categorypolls]);
 
   useEffect(() => {
-    getNews_();
+    //getNews_();
     getCategories();
-  }, [newsList]);
+  }, []);
 
   const changeCurrentUser = user => {
     console.log(user);
@@ -86,16 +86,18 @@ const App = function() {
   };
 
   const getNews_ = param => {
-    API.getNews(param || "").then(data => {
+    API.getNews(param).then(data => {
       setNews({ news: data.data.articles });
+      setCat(true);
     });
   };
 
-  const handleClick = e => {
+  const handleClick = (e, id) => {
     //e.preventDefault()
-    console.log(e.target.id);
-    getNews_(`&category=${e.target.id}`);
-    setCategorypolls(e.target.id);
+    e && !e.target.id
+      ? setCat(false)
+      : getNews_(`&category=${e ? e.target.id : id}`);
+    // setCategorypolls(e.target.id);
   };
 
   return (
@@ -144,9 +146,9 @@ const App = function() {
         />
       ))} */}
 
-      <Cards list={categories} />
-      <Footer />
-      <NewsList list={news} />
+      {!cat ? <Cards list={categories} handleClick={handleClick} /> : ""}
+
+      {cat ? <NewsList list={news} /> : ""}
 
       <Footer />
     </div>
