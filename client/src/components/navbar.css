@@ -9,9 +9,14 @@ a {
 
 .signBtn {
   position: absolute !important;
-  right: 3%;
+  right: 7%;
 }
 
 .page-top {
   margin-bottom: 0;
+}
+
+.signupBtn {
+  position: absolute !important;
+  right: 2%;
 }

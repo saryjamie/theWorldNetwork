@@ -1,43 +1,71 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import img1 from "../assets/images/linkedin.jpeg";
-import img2 from "../assets/images/politics.jpg";
+import img2 from "../assets/images/health.jpg";
 import img3 from "../assets/images/coronav.jpg";
-
+import img4 from "../assets/images/sports.jpg";
+import img5 from "../assets/images/entertainment.jpg";
+import img6 from "../assets/images/business.jpg";
 
 import Card from "./Card";
 
 function Cards(props) {
-    //console.log("~~~~~~~~~~~~~~~~~~~~~~~>"+JSON.stringify(props.list.categories.technology));
+  //console.log("~~~~~~~~~~~~~~~~~~~~~~~>"+JSON.stringify(props.list.categories.technology));
 
-    return(
-<div className="container-fluid d-flex justify-content-center">
-    <div className="row">
-        <div className="col-md-3">
-        <Card imgsrc={img1} title="Technology" mycards={props.list.categories.technology}/>
+  return (
+    <div className="container-fluid d-flex justify-content-center">
+      <div className="row">
+        <div className="col-md-4">
+          <Card
+            imgsrc={img1}
+            title="Technology"
+            mycards={props.list.categories.technology}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img2} title="Sports" mycards={props.list.categories.sports}/>
+        <div className="col-md-4">
+          <Card
+            imgsrc={img4}
+            title="Sports"
+            mycards={props.list.categories.sports}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img3} title="Science" mycards={props.list.categories.science} />
+        <div className="col-md-4">
+          <Card
+            imgsrc={img3}
+            title="Science"
+            mycards={props.list.categories.science}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img1} title="General" mycards={props.list.categories.general}/>
+        {/* <div className="col-md-4">
+          <Card
+            imgsrc={img4}
+            title="General"
+            mycards={props.list.categories.general}
+          />
+        </div> */}
+        <div className="col-md-4">
+          <Card
+            imgsrc={img2}
+            title="Health"
+            mycards={props.list.categories.health}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img2} title="Health" mycards={props.list.categories.health}/>
+        <div className="col-md-4">
+          <Card
+            imgsrc={img6}
+            title="Business"
+            mycards={props.list.categories.business}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img2} title="Business" mycards={props.list.categories.business}/>
+        <div className="col-md-4">
+          <Card
+            imgsrc={img5}
+            title="Entertainment"
+            mycards={props.list.categories.entertainment}
+          />
         </div>
-        <div className="col-md-3">
-        <Card imgsrc={img3} title="Entertainment"  mycards={props.list.categories.entertainment}/>
-        </div>
+      </div>
     </div>
-    
-</div>
-    );
+  );
 }
-
 
 export default Cards;

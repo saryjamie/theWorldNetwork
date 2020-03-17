@@ -36,6 +36,10 @@ function form(props) {
     });
   };
 
+  const cancel = () => {
+    setShow(false);
+  };
+
   const signUp = () => {
     setShow(false);
     API.signUp({ username: username, password: password }).then(user => {
@@ -49,7 +53,7 @@ function form(props) {
         //setLogged(true);
         //setShow(false)
         console.log(currentUser);
-        alert("You're signed up as: ", currentUser);
+        alert("You're signed up");
       }
       //props.changeCurrentUser({username:user.data.user.local.username,id:user.data.user._id})
     });
@@ -68,10 +72,13 @@ function form(props) {
           Sign Out
         </button>
       ) : (
-        <button type="button" class="btn btn-light" onClick={handleShow}>
+        <button type="button" class="btn btn-secondary" onClick={handleShow}>
           Sign in
         </button>
       )}
+      {/* <button button type="button" class="btn btn-link" onClick={signUp}>
+        Signup
+      </button> */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -115,10 +122,17 @@ function form(props) {
             </button>
             <button
               type="submit"
-              className="btn btn-secondary ml-auto"
+              className="btn btn-link ml-auto"
               onClick={signUp}
             >
               Signup
+            </button>
+            <button
+              type="submit"
+              className="btn btn-secondary ml-auto"
+              onClick={cancel}
+            >
+              Cancel
             </button>
           </div>
         </Modal.Footer>

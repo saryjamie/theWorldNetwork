@@ -104,9 +104,19 @@ const App = function() {
           fontFamily: "'Playfair Display', serif"
         }}
       >
-        <p className="page-top" href="#">
-          THE WORLD NETWORK {currentUser.username || ""}
-        </p>
+        {" "}
+        THE WORLD NETWORK
+      </div>
+      <div
+        className="text-center"
+        style={{
+          color: "white",
+          fontSize: "20px",
+          backgroundColor: "darkred",
+          fontFamily: "'Josefin Slab', serif"
+        }}
+      >
+        News You Can Use {currentUser.username || ""}
       </div>
 
       {/* signin authentication goes here */}
@@ -126,9 +136,9 @@ const App = function() {
         />
       ))} */}
 
-      <NewsList list={news} />
-
       <Cards list={categories} />
+
+      <NewsList list={news} />
 
       <Footer></Footer>
     </div>

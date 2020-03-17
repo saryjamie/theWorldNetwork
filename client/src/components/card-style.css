@@ -5,6 +5,8 @@ body {
 .card {
   width: 20rem;
   length: 80rem;
+  margin-bottom: 30px;
+  margin-left: 50px;
 }
 
 .card:hover {
@@ -13,6 +15,7 @@ body {
 
 .card-body {
   padding: 3rem 0 !important;
+  cursor: pointer;
 }
 
 .card-text {

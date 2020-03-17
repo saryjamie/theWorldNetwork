@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import Form from "./Form";
+import FormP from "./FormP";
 
 function Navbar(props) {
   return (
@@ -20,6 +21,16 @@ function Navbar(props) {
 
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav mr-auto" id="navigationItems">
+            <li className="nav-item">
+              <a
+                className="nav-link"
+                onClick={props.handleClick}
+                id=""
+                href="#"
+              >
+                Home
+              </a>
+            </li>
             <li className="nav-item">
               <a
                 className="nav-link"
@@ -82,6 +93,9 @@ function Navbar(props) {
             </li>
             <li className="nav-item signBtn">
               <Form changeCurrentUser={props.changeCurrentUser} />
+            </li>
+            <li className="nav-item signupBtn">
+              <FormP changeCurrentUser={props.changeCurrentUser} />
             </li>
           </ul>
         </div>
